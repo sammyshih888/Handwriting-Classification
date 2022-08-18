@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
+
+    
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    <title>Carousel #8</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="my-5 text-center">Carousel #8</h2>
+
+      <div class="d-flex carousel-nav">
+        <a href="#" class="col active">Brief</a>
+        <a href="#" class="col">Q1</a>
+        <a href="#" class="col">Q2</a>
+        <a href="#" class="col">Q3</a>
+        <a href="#" class="col">Q3</a>
+        <a href="#" class="col">Q3</a>
+        <a href="#" class="col">Q3</a>
+        <a href="#" class="col">Q3</a>
+        <a href="#" class="col">Q3</a>
+      </div>
+
+
+      <div class="owl-carousel owl-1">
+        <div class="media-29101 d-md-flex w-100">
+          <div class="img">
+            <img src="images/hero_1.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="text">
+            <a class="category d-block mb-4" href="#">Travel &mdash; Second Tab</a>
+            <h2><a href="#">Take your mobile photography to the next level</a></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae fuga optio dolorem, fugit voluptates sint ducimus praesentium iste!</p>
+          </div>
+        </div> <!-- .item -->
+        <div class="media-29101 d-md-flex w-100">
+          <div class="img">
+            <img src="images/data/w1.png" alt="Image" class="img-fluid">
+          </div>
+          <div class="text">
+            <!-- <a class="category d-block mb-4" href="#">Travel &mdash; First Tab</a> -->
+            <h2><a href="#">select the digits</a></h2>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae fuga optio dolorem, fugit voluptates sint ducimus praesentium iste!</p> -->
+            <div class="select_btns"></div>
+            
+            
+          </div>
+        </div> <!-- .item -->
+
+        <div class="media-29101 d-md-flex w-100">
+          <div class="img">
+            <img src="images/hero_2.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="text">
+            <a class="category d-block mb-4" href="#">Travel &mdash; Second Tab</a>
+            <h2><a href="#">Take your mobile photography to the next level</a></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae fuga optio dolorem, fugit voluptates sint ducimus praesentium iste!</p>
+          </div>
+        </div> <!-- .item -->
+
+        <div class="media-29101 d-md-flex w-100">
+          <div class="img">
+            <img src="images/hero_3.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="text">
+            <a class="category d-block mb-4" href="#">Travel &mdash; Third Tab</a>
+            <h2><a href="#">Take your mobile photography to the next level</a></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae fuga optio dolorem, fugit voluptates sint ducimus praesentium iste!</p>
+          </div>
+        </div> <!-- .item -->
+
+
+        <div class="media-29101 d-md-flex w-100">
+          <div class="img">
+            <img src="images/hero_1.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="text">
+            <!-- <a class="category d-block mb-4" href="#">Travel &mdash; Third Tab</a> -->
+            <h2><a href="#">Take your mobile photography to the next level</a></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae fuga optio dolorem, fugit voluptates sint ducimus praesentium iste!</p>
+          </div>
+        </div> <!-- .item -->
+        
+
+      </div>
+    </div>
+  </div>
+    <script>
+      let its = document.getElementsByClassName('select_btns');
+    for( let it of its){
+          for(let i=0 ; i<10 ; i++){
+              it.innerHTML+=`<input id="t${i}" type="checkbox" data-toggle="toggle" data-on="${i}" data-off="${i}" data-onstyle="primary" data-offstyle="light" data-size="lg" data-style="fast" data-width="60">`;
+          }
+      }</script>
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
