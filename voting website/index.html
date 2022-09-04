@@ -54,6 +54,7 @@
         </a>
       </div>
       <div class="d-flex carousel-nav" id="nav_tab">
+        
         <a href="#" class="col active">Brief</a>
 
       </div>
@@ -74,10 +75,17 @@
             <p>Data source：<a href="https://github.com/BlackHC/ddu_dirty_mnist" target="_blank">DDU's
                 Dirty-MNIST</a>
             </p>
+            <div style="text-align: right;" id="start_btn">
+
+              <button style="margin: 20px;" type="button" class="btn btn-lg btn-outline-secondary"
+                onclick="goToNext();">START</button>
+            </div>
           </div>
         </div> <!-- .item -->
 
       </div>
+      <div style="position:relative"><span class="" id="submit_result_text" style="position:absolute;top:-30px;right:115px;visibility: hidden ;color: rgb(147, 147, 147);">Please submit your work after you finished it.</span>
+        <button class="btn btn-primary btn-lg" id="submit_result" style="position:absolute;top:-70px;right:5px;visibility: hidden;">Submit</button></div>
       <p class="text-center">©2022 - website built by Samantha,Shih. theme by <a
           href="https://colorlib.com/wp/template/carousel-18/">carousel-18</a> powered by <a
           href="https://getbootstrap.com/">Bootstrap</a>
@@ -96,6 +104,21 @@
   <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cookieconsent.popupsmart.com/src/js/popper.js"></script>
   <script> window.start.init({ Palette: "palette1", Mode: "floating right", Theme: "edgeless", Message: "This website uses cookies to keep track of the questions you have finished.", ButtonText: "Got it!", Location: "https://ec.europa.eu/info/cookies_en", Time: "5", })</script>
+  <script type="module">
+    import db from "./js/firebase_util.js";
+    
+    document
+        .getElementById("submit_result")
+        .addEventListener("click", db.addClick);    
+        
+    var tag = 'ahdl';
+    if (localStorage.getItem(tag) == null) {
+      localStorage.setItem('udata', undefined);
+    } else {
+      data = JSON.parse(localStorage.getItem(tag));
+      db.getData("" + data.id);
+    }
+  </script>
 </body>
 
 
