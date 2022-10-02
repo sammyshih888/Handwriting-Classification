@@ -7,8 +7,15 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 function save() {
-    alert("Your data has been successfully submitted.");
-    alert("If you have time and you can do the following questions.");
+    let lang = window.location.hash;
+    //console.log('lang:' + lang);
+    if (lang == '#ch') {
+        alert("您的資料已經成功上傳。謝謝您！");
+        alert("如果您有更多的時間可以協助我們，可以繼續進行接下來的問題。");
+    } else {
+        alert("Your data has been successfully submitted.");
+        alert("If you have time and you can do the following questions.");
+    }
     data = JSON.parse(localStorage.getItem(tag));
 
     let ans = document.getElementsByTagName('input');
