@@ -54,9 +54,7 @@
         </a>
       </div>
       <div class="d-flex carousel-nav" id="nav_tab">
-        
         <a href="#" class="col active">Brief</a>
-
       </div>
 
 
@@ -66,7 +64,7 @@
             <img src="images/100_ambiguous_MNIST.jpg" alt="Image" class="img-fluid">
           </div>
           <div class="text">
-            <h2><a href="#">Ambiguous handwriting digits labeling.</a></h2>
+            <h2><span>Ambiguous handwriting digits labeling.</span></h2>
             <h5>This site will collect the labels of ambiguous handwriting digits for the machine learning task. Look
               at
               the images and decide which numbers you prefer.
@@ -84,8 +82,12 @@
         </div> <!-- .item -->
 
       </div>
-      <div style="position:relative"><span class="" id="submit_result_text" style="position:absolute;top:-30px;right:115px;visibility: hidden ;color: rgb(147, 147, 147);">Please submit your work after you finished it.</span>
-        <button class="btn btn-primary btn-lg" id="submit_result" style="position:absolute;top:-70px;right:5px;visibility: hidden;z-index: 999;">Submit</button></div>
+      <div style="position:relative"><span class="" id="submit_result_text"
+          style="position:absolute;top:-30px;right:115px;visibility: hidden ;color: rgb(147, 147, 147);">Please submit
+          your work after you finished it.</span>
+        <button class="btn btn-primary btn-lg" id="submit_result"
+          style="position:absolute;top:-70px;right:5px;visibility: hidden;z-index: 999;">Submit</button>
+      </div>
       <p class="text-center">©2022 - website built by Samantha,Shih. theme by <a
           href="https://colorlib.com/wp/template/carousel-18/">carousel-18</a> powered by <a
           href="https://getbootstrap.com/">Bootstrap</a>
@@ -106,11 +108,11 @@
   <script> window.start.init({ Palette: "palette1", Mode: "floating right", Theme: "edgeless", Message: "This website uses cookies to keep track of the questions you have finished.", ButtonText: "Got it!", Location: "https://ec.europa.eu/info/cookies_en", Time: "5", })</script>
   <script type="module">
     import db from "./js/firebase_util.js";
-    
+
     document
-        .getElementById("submit_result")
-        .addEventListener("click", db.addClick);    
-        
+      .getElementById("submit_result")
+      .addEventListener("click", db.addClick);
+
     var tag = 'ahdl';
     if (localStorage.getItem(tag) == null) {
       localStorage.setItem('udata', undefined);
@@ -118,6 +120,36 @@
       data = JSON.parse(localStorage.getItem(tag));
       db.getData("" + data.id);
     }
+  </script>
+  <script>
+    $(function () {
+      let lang = window.location.hash;
+      console.log('lang:' + lang);
+      if (lang == '#ch') {
+        // header
+        $('h1')[0].textContent = '模糊手寫數字標記';
+        $('#nav_tab a')[0].textContent = '簡介';
+        $('#question_body div div h2 span')[0].textContent = '模糊手寫數字標記';
+        $('#question_body div div h5')[0].innerHTML = '為分析探討「模糊手寫數字」在機器學習方法中的相關問題，故建立此網站進行資料標記與蒐集，建立人們對於模糊數字的識別資料庫。' +
+          '所有的資料僅用於相關學術研究的探討。<br><br>點擊右下方「開始」按鈕，即可開始進行標記。<br><br>非常感謝您的協助！';
+        $('#question_body div div div button')[0].textContent = '開始';
+        $('#submit_result_text')[0].textContent = '完成題目後，請點擊上傳結果';
+        $('#submit_result')[0].textContent = '上傳';
+        $('button').each(function (k, v) {
+          if (v.textContent == 'PREV') {
+            v.textContent = '上一題';
+          } else if (v.textContent == 'NEXT') {
+            v.textContent = '下一題';
+          }
+        });
+        $('.text h2 a').each(function (k, v) {
+          //console.log(v.textContent);
+          //Look at the images and decide which numbers you prefer（one or more choices）
+          v.textContent = '請選出圖中您認為的數字為何？（可複選）';
+        });
+      } 
+      // console.log("ready!");
+    });
   </script>
 </body>
 
