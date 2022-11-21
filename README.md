@@ -5,7 +5,9 @@ Handwritten digits are currently labeled as distinct labels, yet there are cases
 
 ## Tasks
 (1) Data collection - create a website where users can vote: https://sammyshih888.github.io/Handwriting-Classification/voting%20website/
+
 (2) Use machine learning to build a classification engine based on collected data
+
 (3) Data analysis - analyze ambiguous digits
 
 ## Issues/Improvements
